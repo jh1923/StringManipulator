@@ -1,8 +1,8 @@
-
 public class StringManipulator 
 {
-	public String noVowels(String str)
+	public static String noVowels(String str)
 	{	
+		str = str.toLowerCase();
 		String newStr = "";
 		for (int i = 0; i < (str.length()); i++)
 		{
@@ -14,6 +14,16 @@ public class StringManipulator
 			{
 				newStr += "" + str.charAt(i);
 			}
+		}
+		return newStr;
+	}
+	
+	public static String reverse(String str)
+	{
+		String newStr = "";
+		for (int i = str.length()-1; i > -1; i--)
+		{
+			newStr += "" + str.charAt(i);
 		}
 		return newStr;
 	}
