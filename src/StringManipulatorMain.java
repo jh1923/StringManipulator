@@ -9,7 +9,7 @@ public class StringManipulatorMain
 		while (tryAgain)
 		{
 			Scanner in = new Scanner(System.in);
-			System.out.println("Would you like to run a method? (y/n): ");
+			System.out.println("\nWould you like to run a method? (y/n): ");
 			String tryDecision = (in.next()).toLowerCase();
 			in.nextLine();
 			if (tryDecision.charAt(0) == 'y')
@@ -36,6 +36,7 @@ public class StringManipulatorMain
 			}
 			else
 			{
+				System.out.println("lol ur a nerd");
 				tryAgain = false;
 			}
 		}
