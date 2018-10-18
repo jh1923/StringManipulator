@@ -1,44 +1,36 @@
-import java.util.Scanner;
-
-public class StringManipulatorMain 
+/**
+ * 
+ * @author Julia Hu
+ * StringManipulator
+ *
+ */
+public class StringManipulator 
 {
-
-	public static void main(String[] args)
-	{
-		boolean tryAgain = true;
-		while (tryAgain)
+	public static String noVowels(String str)
+	{	
+		str = str.toLowerCase();
+		String newStr = "";
+		for (int i = 0; i < (str.length()); i++)
 		{
-			Scanner in = new Scanner(System.in);
-			System.out.println("\nWould you like to run a method? (y/n): ");
-			String tryDecision = (in.next()).toLowerCase();
-			in.nextLine();
-			if (tryDecision.charAt(0) == 'y')
+			if (str.charAt(i)=='a' || str.charAt(i)=='e' || str.charAt(i)=='i' || str.charAt(i)=='o' || str.charAt(i)=='u')
 			{
-				System.out.println("Which method would you like to run?\n1. noVowels \n2. reverse \nEnter '1' or '2': ");
-				int choice = in.nextInt();
-				in.nextLine();
-				
-				if (choice == 1)
-				{
-					System.out.println("Enter a string: ");
-					String str = in.next();
-					in.nextLine();
-					System.out.println(StringManipulator.noVowels(str));
-				}
-				
-				else if (choice == 2)
-				{
-					System.out.println("Enter a string: ");
-					String str = in.next();
-					in.nextLine();
-					System.out.println(StringManipulator.reverse(str));
-				}
+				newStr+="*";
 			}
 			else
 			{
-				System.out.println("lol ur a nerd");
-				tryAgain = false;
+				newStr += "" + str.charAt(i);
 			}
 		}
+		return newStr;
+	}
+	
+	public static String reverse(String str)
+	{
+		String newStr = "";
+		for (int i = str.length()-1; i > -1; i--)
+		{
+			newStr += "" + str.charAt(i);
+		}
+		return newStr;
 	}
 }
